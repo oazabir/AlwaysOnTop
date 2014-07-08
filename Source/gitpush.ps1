@@ -20,8 +20,8 @@ cd ../..
 cmd /c copy bin\debug\$zipname ..\Binary\ /Y
 
 # remove bin and obj before comitting to git
-rm -Force bin
-rm -Force obj
+rm -Force -Confirm bin
+rm -Force -Confirm obj
 
 cd ..
 git add -A *.*
