@@ -7,8 +7,8 @@ param (
  
 # Clean up binary folder since we will be generating new binaries
 rm ..\Binary\*.* -Force -Recurse
-rm -Force bin
-rm -Force obj
+if (Test-Path "bin" ) { rm -Force bin }
+if (Test-Path "obj" ) { rm -Force obj }
 
 # build new version
 msbuild /verbosity:minimal $solution
